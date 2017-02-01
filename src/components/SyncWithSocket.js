@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import _ from 'lodash';
 import {connect} from 'react-redux';
 import socket from '../socket';
 import {setSignature} from '../redux/actionCreators';
