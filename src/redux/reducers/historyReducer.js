@@ -1,5 +1,4 @@
 import {LOG_LAST_ACTION } from '../actions';
-
 const DEFAULT_STATE = {
 };
 
