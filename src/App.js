@@ -10,17 +10,8 @@ class App extends Component {
     return (
         <div className="App">
           <Jumbotron>
-            <h1>Open Charades</h1>
-            <p>This is an open source charades word generator</p>
-            <div className="spaced">
-              <BackButton/>
-            </div>
-            <div className="spaced">
-              <TopicChooser/>
-            </div>
-            <div className="spaced">
-              <WordGenerator/>
-            </div>
+            <h1>React Demo</h1>
+            <p>This is a demo of some cool react stuff</p>
           </Jumbotron>
         </div>
     );
