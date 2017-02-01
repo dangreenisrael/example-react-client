@@ -1,9 +1,10 @@
-import {socket} from './../../socket';
+import socket from './../../socket';
 
-const logger = store => next => action => {
-  let result = next(action);
-  socket.emit('action', action);
-  return result
+const broadcast = store => next => action => {
+  if (action.type !== "LOG_LAST_ACTION"){
+    socket.emit('action', action);
+  }
+  return next(action)
 };
 
-export default logger;
+export default broadcast;

@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux'
-import charades from './charades'
-import undoable from 'redux-undo';
+import demo from './demoReducer'
+import history from './historyReducer'
 
 export default combineReducers({
-  charades: undoable(charades)
+  demo,
+  history
 })
