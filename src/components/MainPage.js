@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Form from './Form';
+import Dragula from './Dragula';
+// import DndExample from './DndExample'
 import {Jumbotron} from 'react-bootstrap';
 class App extends Component {
 
@@ -9,6 +11,7 @@ class App extends Component {
           <h1>React Demo</h1>
           <p>This is a demo of some cool react stuff</p>
           <Form/>
+          <Dragula/>
         </Jumbotron>
     );
   }

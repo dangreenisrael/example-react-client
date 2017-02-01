@@ -1,5 +1,6 @@
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css");
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css");
+@import "~@blueprintjs/core/dist/blueprint.css";
 
 body {
   margin: 0;
@@ -18,4 +19,8 @@ body {
 
 .spaced{
   margin:10px;
+}
+
+.gu-transit{
+  opacity: 0.2;
 }
