@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Form from './Form';
 import ShowText from './ShowText';
 import {Jumbotron} from 'react-bootstrap';
 class App extends Component {

@@ -3,8 +3,8 @@ import './App.css';
 import {Route} from 'react-router-dom'
 import MainPage from './components/MainPage';
 import LiveUpdates from './components/LiveUpdates';
-
 import SyncWithSockets from './components/SyncWithSocket';
+import Drag from './components/DragDemo';
 
 class App extends Component {
   render() {
@@ -12,6 +12,7 @@ class App extends Component {
         <div className="App">
           <Route exact path="/" component={MainPage}/>
           <Route exact path="/live-updates" component={LiveUpdates}/>
+          <Route exact path="/drag" component={Drag}/>
           <SyncWithSockets/>
         </div>
     );

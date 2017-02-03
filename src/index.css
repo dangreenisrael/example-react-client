@@ -1,5 +1,8 @@
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css");
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css");
+@import url("https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css");
+@import "~@blueprintjs/core/dist/blueprint.css";
+@import "~@blueprintjs/table/dist/table.css";
 
 body {
   margin: 0;
