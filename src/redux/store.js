@@ -6,6 +6,7 @@ import combinedReducer from './reducers/index';
 
 const store = createStore(combinedReducer, compose(
     applyMiddleware(thunk, logLastAction),
+
     typeof window === 'object' && typeof window.devToolsExtension !== 'undefined'
         ? window.devToolsExtension() : (f) => f
 ));

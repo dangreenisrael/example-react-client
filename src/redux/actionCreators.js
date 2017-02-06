@@ -8,6 +8,7 @@ export function setProperty (propertyName, propertyValue) {
 }
 
 export function logLastAction (action) {
+
   return { type: LOG_LAST_ACTION, action };
 }
 

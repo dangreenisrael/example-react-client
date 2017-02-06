@@ -22,6 +22,7 @@ const setProperty = (state, action) => {
 
 
 const rootReducer = (state = DEFAULT_STATE, action) => {
+
   if (action){
     switch (action.type) {
       case SET_PROPERTY:
