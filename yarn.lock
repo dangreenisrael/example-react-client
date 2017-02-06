@@ -4870,6 +4870,10 @@ react-dnd-html5-backend@^2.1.2:
   dependencies:
     lodash "^4.2.0"
 
+react-dnd-text-dragpreview@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/react-dnd-text-dragpreview/-/react-dnd-text-dragpreview-0.2.3.tgz#4209bc68942239ef6d595835c912bd5f12054241"
+
 react-dnd@^2.1.4:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/react-dnd/-/react-dnd-2.1.4.tgz#dd2afeddddd5ff4507d795a5bd44361c84374c0f"

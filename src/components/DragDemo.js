@@ -2,14 +2,14 @@ import React, {Component} from 'react';
 import {DragDropContext} from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import DragTarget from './drag/DragTarget';
-import Table from './draggableTable/index';
-
+import Table from './draggableTable/Table';
 
 const headings = ["firstName", "lastName", "userName", "tags"];
 @DragDropContext(HTML5Backend)
 export default class Container extends Component {
   constructor(props) {
     super(props);
+    this.onCheck = this.onCheck.bind(this);
     this.state = {
       groups: [
         {name: "Facebook"},
@@ -23,6 +23,11 @@ export default class Container extends Component {
         f53e5t65l: {firstName: "Dave", lastName: "Cutler", userName: "DCutler", tags: []}
       }
     };
+  }
+  onCheck(id, checked){
+    let updatedState = Object.assign({},this.state);
+    updatedState.rowData[id].checked = checked;
+    this.setState(updatedState);
   }
   render() {
     const {groups, rowData} = this.state;
@@ -39,13 +44,12 @@ export default class Container extends Component {
             )}
           </div>
           <div style={{float:"right"}}>
-            <Table headings={headings} rowData={rowData}>
+            <Table headings={headings} rowData={rowData} onCheck={this.onCheck}>
             </Table>
           </div>
         </div>);
   }
   handleDrop(item, tagName) {
-    console.log(item);
     let rowData = Object.assign({}, this.state.rowData);
     rowData[item.id].tags.push(tagName);
     this.setState({rowData: rowData});
