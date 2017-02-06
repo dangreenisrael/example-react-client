@@ -1,14 +1,10 @@
 import React, {Component} from 'react';
 import {Table} from 'react-bootstrap';
-import DraggableRow from './DraggableRow';
+import DraggableRowContainer from './RowDraggableContainer';
 
 class index extends Component {
   constructor(props){
     super(props);
-    this.onCheck = this.onCheck.bind(this);
-  }
-  onCheck(id, checked){
-    this.props.onCheck(id, checked);
   }
   render() {
     const {rowData, headings} = this.props;
@@ -25,11 +21,9 @@ class index extends Component {
           </thead>
           <tbody>
             {Object.keys(rowData).map((rowId,i)=>{
-              return(
-                  <DraggableRow
-                      data={rowData[rowId]} onCheck={this.onCheck}
-                      headings={headings} key={i} id={rowId}/>
-              )
+              return  <DraggableRowContainer
+                  data={rowData[rowId]}
+                  headings={headings} key={i} id={rowId}/>
             })}
           </tbody>
         </Table>

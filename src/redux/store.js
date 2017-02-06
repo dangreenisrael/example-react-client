@@ -1,12 +1,10 @@
 
 import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import logLastAction from './middleware/log-last-action';
-import combinedReducer from './reducers/index';
+import combinedReducer from './combiner';
 
 const store = createStore(combinedReducer, compose(
-    applyMiddleware(thunk, logLastAction),
-
+    applyMiddleware(thunk),
     typeof window === 'object' && typeof window.devToolsExtension !== 'undefined'
         ? window.devToolsExtension() : (f) => f
 ));

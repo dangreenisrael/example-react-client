@@ -27,7 +27,6 @@ class Checkbox extends Component {
             onChange={this.handleInputChange} />
     );
   }
-
 }
 
 export default Checkbox;

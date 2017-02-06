@@ -1,19 +1,13 @@
 import React, {Component} from 'react';
 import './App.css';
 import {Route} from 'react-router-dom'
-import MainPage from './components/MainPage';
-import LiveUpdates from './components/LiveUpdates';
-import SyncWithSockets from './components/SyncWithSocket';
-import Drag from './components/DragDemo';
+import Drag from './components/draggableTable/Container';
 
 class App extends Component {
   render() {
     return (
         <div className="App">
-          <Route exact path="/" component={MainPage}/>
-          <Route exact path="/live-updates" component={LiveUpdates}/>
-          <Route exact path="/drag" component={Drag}/>
-          <SyncWithSockets/>
+          <Route exact path="/" component={Drag}/>
         </div>
     );
   }
