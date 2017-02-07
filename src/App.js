@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import {Route} from 'react-router-dom'
-import Drag from './components/draggableTable/Container';
+import Drag from './components/influencerListDraggable/Container';
 
 class App extends Component {
   render() {

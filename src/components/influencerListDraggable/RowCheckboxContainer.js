@@ -10,13 +10,20 @@ class CheckboxContainer extends Component {
   }
   onCheck(status){
     this.props.dispatch(toggleSelectedStatus(this.props.rowId, status));
-    this.props.toggleChecked(status);
   }
   render() {
+    const {selection,rowId} = this.props;
+    let checked = (selection.indexOf(rowId) > -1);
     return (
-        <Checkbox onChange={this.onCheck}/>
+        <Checkbox onChange={this.onCheck} checked={checked}/>
     );
   }
 }
 
-export default connect()(CheckboxContainer);
+const mapStateToProps = (state) => {
+  return {
+    selection: state.currentSelection.ids
+  };
+};
+
+export default connect(mapStateToProps)(CheckboxContainer);

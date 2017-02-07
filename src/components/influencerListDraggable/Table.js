@@ -1,18 +1,17 @@
 import React, {Component} from 'react';
 import {Table} from 'react-bootstrap';
 import DraggableRowContainer from './RowDraggableContainer';
+import Checkbox from '../Checkbox';
 
 class index extends Component {
-  constructor(props){
-    super(props);
-  }
   render() {
-    const {rowData, headings} = this.props;
+    const {rowData, headings, onCheck, checkboxStatus} = this.props;
     return (
         <Table striped bordered >
           <thead>
           <tr>
             <td>
+              <Checkbox onChange={onCheck} checked={checkboxStatus}/>
             </td>
             {headings.map((heading, i)=>{
               return <td key={i}>{heading}</td>

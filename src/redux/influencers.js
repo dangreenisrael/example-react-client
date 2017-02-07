@@ -1,6 +1,7 @@
+import _ from 'lodash';
+
 // Action Types
-// const ADD_TO_LIST = 'scout/selection/ADD_TO_LIST';
-// const REMOVE_FROM_LIST = 'scout/selection/REMOVE_FROM_LIST';
+const ADD_TAG = 'scout/influencers/ADD_TAG';
 
 // Default State
 const defaultState = {
@@ -12,20 +13,17 @@ const defaultState = {
 // Reducer
 export default (state = defaultState, action) => {
   switch (action.type) {
-    // case ADD_TO_LIST:
-    //   return Object.assign({}, state, {ids: [...state.ids, action.id]});
-    // case REMOVE_FROM_LIST:
-    //   const updatedIds = state.ids.filter(id => id !== action.id);
-    //   return Object.assign({}, state, {ids: updatedIds});
+    case ADD_TAG:
+      const {influencerId, tag} = action;
+      const tags = _.union(state[influencerId].tags, [tag]);
+      const influencer = Object.assign({}, state[influencerId], {tags: tags});
+      return Object.assign({}, state, {[influencerId]:influencer});
     default:
       return state;
   }
 };
 
 // Action Creators
-// export function toggleSelectedStatus(id, status) {
-//   if (status){
-//     return { type: ADD_TO_LIST, id };
-//   }
-//   return { type: REMOVE_FROM_LIST, id};
-// }
+export function addTag(influencerId, tag) {
+  return { type: ADD_TAG, influencerId, tag};
+}
