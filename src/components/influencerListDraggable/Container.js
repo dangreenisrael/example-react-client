@@ -16,7 +16,7 @@ class Container extends Component {
     this.getCheckboxStatus = this.getCheckboxStatus.bind(this);
   }
   render() {
-    const headings = ["firstName", "lastName", "userName", "tags"];
+    const headings = ["firstName", "lastName", "userName"];
     const {tags, influencers} = this.props;
     const checkboxStatus = this.getCheckboxStatus();
     return (

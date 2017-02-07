@@ -1,7 +1,8 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import DraggableRow from './RowDraggable';
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import DraggableRow from './RowDraggable'
 import { createDragPreview } from 'react-dnd-text-dragpreview'
+import {removeTag} from '../../redux/influencers'
 
 const dragPreviewStyle = {
   backgroundColor: 'rgb(68, 67, 67)',
@@ -18,11 +19,16 @@ class RowDraggableContainer extends Component {
   constructor(props) {
     super(props);
     this.dragMessage = this.dragMessage.bind(this);
+    this.removeTag = this.removeTag.bind(this);
   }
   dragMessage() {
     const numRows = this.props.selection.length;
     const noun = numRows > 1 ? 'rows' : 'row';
     return `Moving ${numRows||1} ${noun}`;
+  }
+  removeTag(tag){
+    const {id, dispatch} = this.props;
+    dispatch(removeTag(id, tag));
   }
   render() {
     const dragPreview = createDragPreview(
@@ -38,6 +44,7 @@ class RowDraggableContainer extends Component {
           id={id}
           currentSelection={currentSelection}
           selected={isSelected}
+          removeTag={this.removeTag}
           dragPreview={dragPreview}
       />
     );

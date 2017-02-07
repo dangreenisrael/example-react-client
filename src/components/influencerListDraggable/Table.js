@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Table} from 'react-bootstrap';
 import DraggableRowContainer from './RowDraggableContainer';
 import Checkbox from '../Checkbox';
-
 class index extends Component {
   render() {
     const {rowData, headings, onCheck, checkboxStatus} = this.props;
@@ -16,6 +15,9 @@ class index extends Component {
             {headings.map((heading, i)=>{
               return <td key={i}>{heading}</td>
             })}
+            <td>
+              Tags
+            </td>
           </tr>
           </thead>
           <tbody>
