@@ -6,7 +6,6 @@ import Table from './Table';
 import Cards from './Cards';
 import {addTag} from '../../redux/influencers';
 import {clearSelection, addToSelection} from '../../redux/currentSelection';
-
 @DragDropContext(HTML5Backend)
 class Container extends Component {
   constructor(props) {

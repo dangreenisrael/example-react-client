@@ -11,6 +11,11 @@ const defaultState = {
   f53e5t65l: {firstName: "Dave", lastName: "Cutler", userName: "DCutler", tags: ['Twitter']}
 };
 
+const setInfluencerTag = (state, influencerId, tags)=>{
+  const influencer = Object.assign({}, state[influencerId], {tags: tags});
+  return {[influencerId]: influencer}
+};
+
 
 // Reducer
 export default (state = defaultState, action) => {
@@ -18,14 +23,14 @@ export default (state = defaultState, action) => {
     case ADD_TAG: {
       const {influencerId, tag} = action;
       const tags = _.union(state[influencerId].tags, [tag]);
-      const influencer = Object.assign({}, state[influencerId], {tags: tags});
-      return Object.assign({}, state, {[influencerId]: influencer});
+      const newInfluencerObject = setInfluencerTag(state, influencerId, tags);
+      return Object.assign({}, state, newInfluencerObject);
     }
     case REMOVE_TAG: {
       const {influencerId, tag} = action;
       const tags = state[influencerId].tags.filter((eachTag) => (eachTag !== tag));
-      const influencer = Object.assign({}, state[influencerId], {tags: tags});
-      return Object.assign({}, state, {[influencerId]: influencer});
+      const newInfluencerObject = setInfluencerTag(state, influencerId, tags);
+      return Object.assign({}, state, newInfluencerObject);
     }
     default:
       return state;

@@ -16,20 +16,20 @@ const boxSource = {
 }))
 export default class DraggableRow extends Component {
   render() {
+
     this.props.connectDragPreview(this.props.dragPreview);
-    const {connectDragSource, data, headings, id, selected, removeTag} = this.props;
-    const style = selected ? {backgroundColor: "rgba(23, 42, 251, 0.34)" } : {};
-    const cellData = headings.map(key =>{
-      return data[key]
-    });
+    const {activeStyle, connectDragSource, activeColumn, data, headings, id, selected, removeTag} = this.props;
+    const style = selected ? activeStyle : {};
     return connectDragSource(
         <tr style={style}>
           <td>
             <RowCheckboxContainer rowId={id}/>
           </td>
-          {cellData.map((cell, i)=>{
-            return <td key={`data-${i}`}>
-              {cell}
+          {headings.map((heading, i)=>{
+            const propName = heading.propertyName;
+            const style = (propName === activeColumn) ? activeStyle: {};
+            return <td style={style} key={`data-${i}`}>
+              {data[propName]}
             </td>
           })}
           <td>

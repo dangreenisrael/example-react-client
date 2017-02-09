@@ -31,11 +31,11 @@ class RowDraggableContainer extends Component {
     dispatch(removeTag(id, tag));
   }
   render() {
-    const dragPreview = createDragPreview(
+    const dragPreview = process.env.NODE_ENV === "test"? null : createDragPreview(
         this.dragMessage(),
         dragPreviewStyle
     );
-    const {currentSelection, data, headings, id, selection} = this.props;
+    const {currentSelection, activeStyle, activeColumn, data, headings, id, selection} = this.props;
     const isSelected = (selection.indexOf(id) !== -1);
     return (
       <DraggableRow
@@ -46,8 +46,11 @@ class RowDraggableContainer extends Component {
           selected={isSelected}
           removeTag={this.removeTag}
           dragPreview={dragPreview}
+          activeStyle={activeStyle}
+          activeColumn={activeColumn}
       />
     );
+
   }
 }
 
