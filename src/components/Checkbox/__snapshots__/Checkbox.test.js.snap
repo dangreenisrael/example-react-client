@@ -1,0 +1,7 @@
+exports[`test Checkbox Renders Correctly 1`] = `
+<input
+  checked={true}
+  name="checkMe"
+  onChange={[Function]}
+  type="checkbox" />
+`;

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {toggleSelectedStatus} from '../../redux/currentSelection';
+import {toggleSelectedStatus} from '../../../../redux/currentSelection';
 import {connect} from 'react-redux';
-import Checkbox from '../Checkbox';
+import Checkbox from '../../../Checkbox/Checkbox';
 
 class CheckboxContainer extends Component {
   constructor(props) {

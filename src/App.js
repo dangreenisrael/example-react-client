@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import Drag from './components/influencerListDraggable/Container';
+import InfluencerListDraggable from './components/InfluencerListDraggable/InfluencerListDraggable';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
@@ -9,7 +9,7 @@ class App extends Component {
     return (
         <Provider store={store}>
           <div className="App">
-            <Drag/>
+            <InfluencerListDraggable/>
           </div>
         </Provider>
 

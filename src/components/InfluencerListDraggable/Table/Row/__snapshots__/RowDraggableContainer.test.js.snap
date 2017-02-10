@@ -1,0 +1,19 @@
+exports[`test Row Draggable Renders correctly 1`] = `
+<tr
+  style={Object {}}>
+  <td>
+    <input
+      checked={false}
+      name={undefined}
+      onChange={[Function]}
+      type="checkbox" />
+  </td>
+  <td
+    style={undefined} />
+  <td
+    style={undefined} />
+  <td
+    style={undefined} />
+  <td />
+</tr>
+`;

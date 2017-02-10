@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import update from 'react/lib/update';
 import {Table} from 'react-bootstrap';
-import DraggableRowContainer from './RowDraggableContainer';
-import Checkbox from '../Checkbox';
-import HeadingSortable from './HeadingSortable';
+import DraggableRowContainer from './Row/RowDraggableContainer';
+import Checkbox from '../../Checkbox/Checkbox';
+import HeadingSortable from './Heading/HeadingSortable';
 import _ from 'lodash';
 
-class index extends Component {
+export default class index extends Component {
   constructor(props) {
     super(props);
     this.reorderHeadings = this.reorderHeadings.bind(this);
@@ -92,5 +92,3 @@ class index extends Component {
     );
   }
 }
-
-export default index;

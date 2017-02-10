@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import DraggableRow from './RowDraggable'
 import { createDragPreview } from 'react-dnd-text-dragpreview'
-import {removeTag} from '../../redux/influencers'
+import {removeTag} from '../../../../redux/influencers'
 
 const dragPreviewStyle = {
   backgroundColor: 'rgb(68, 67, 67)',

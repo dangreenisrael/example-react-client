@@ -1,0 +1,10 @@
+exports[`test HeadingSortable Renders Correctly 1`] = `
+<td
+  style={
+    Object {
+      "cursor": "move",
+    }
+  }>
+  test heading
+</td>
+`;

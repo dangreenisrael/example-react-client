@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {DragSource} from 'react-dnd';
 import RowCheckboxContainer from './RowCheckboxContainer';
-import Tag from '../Tag'
+import Tag from '../../../Tag'
 
 const boxSource = {
   beginDrag(props) {
@@ -16,7 +16,6 @@ const boxSource = {
 }))
 export default class DraggableRow extends Component {
   render() {
-
     this.props.connectDragPreview(this.props.dragPreview);
     const {activeStyle, connectDragSource, activeColumn, data, headings, id, selected, removeTag} = this.props;
     const style = selected ? activeStyle : {};
